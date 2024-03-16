@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:JT-{sales_order}-{#####}",
+ "creation": "2024-03-16 14:59:55.295827",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_rzqi",
+  "amended_from",
+  "sales_order",
+  "sales_order_item",
+  "project",
+  "customer_purchase_order",
+  "column_break_s3l7",
+  "c_of_c",
+  "c_of_m",
+  "c_of_o",
+  "inspection_report",
+  "tasks_section",
+  "tasks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_rzqi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Job Traveler",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_order_item",
+   "fieldtype": "Link",
+   "label": "Sales Order Item",
+   "options": "Sales Order Item"
+  },
+  {
+   "fetch_from": "sales_order.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "sales_order.po_no",
+   "fieldname": "customer_purchase_order",
+   "fieldtype": "Data",
+   "label": "Customer Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_s3l7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "c_of_c",
+   "fieldtype": "Check",
+   "label": "C of C"
+  },
+  {
+   "default": "0",
+   "fieldname": "c_of_m",
+   "fieldtype": "Check",
+   "label": "C of M"
+  },
+  {
+   "default": "0",
+   "fieldname": "c_of_o",
+   "fieldtype": "Check",
+   "label": "C of O"
+  },
+  {
+   "default": "0",
+   "fieldname": "inspection_report",
+   "fieldtype": "Check",
+   "label": "Inspection Report"
+  },
+  {
+   "fieldname": "tasks_section",
+   "fieldtype": "Section Break",
+   "label": "Tasks"
+  },
+  {
+   "fieldname": "tasks",
+   "fieldtype": "Table",
+   "label": "Tasks",
+   "options": "Job Traveler Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-03-16 15:05:22.326238",
+ "modified_by": "Administrator",
+ "module": "Job Traveler",
+ "name": "Job Traveler",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-16 14:54:27.715631",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task",
+  "completed_by",
+  "date",
+  "date_required"
+ ],
+ "fields": [
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task",
+   "options": "Task"
+  },
+  {
+   "fetch_from": "task.completed_by",
+   "fieldname": "completed_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Completed By"
+  },
+  {
+   "fetch_from": "task.completed_on",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "task.exp_end_date",
+   "fieldname": "date_required",
+   "fieldtype": "Date",
+   "label": "Date Required"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-16 14:59:24.424273",
+ "modified_by": "Administrator",
+ "module": "Job Traveler",
+ "name": "Job Traveler Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
