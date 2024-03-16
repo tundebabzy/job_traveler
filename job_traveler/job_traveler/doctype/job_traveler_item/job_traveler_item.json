@@ -30,19 +30,21 @@
    "fetch_from": "task.completed_on",
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date"
   },
   {
    "fetch_from": "task.exp_end_date",
    "fieldname": "date_required",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date Required"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-03-16 14:59:24.424273",
+ "modified": "2024-03-16 15:57:40.157182",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler Item",
