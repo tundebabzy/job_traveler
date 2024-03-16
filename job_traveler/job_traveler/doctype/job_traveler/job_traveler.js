@@ -6,3 +6,12 @@
 
 // 	},
 // });
+frappe.ui.form.on("Job Traveler", {
+    setup(frm) {
+        frm.set_query("sales_order", () => ({
+            filters: {
+                docstatus: 1 
+            }
+        }));
+    }
+});
