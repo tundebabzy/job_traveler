@@ -13,5 +13,21 @@ frappe.ui.form.on("Job Traveler", {
                 docstatus: 1 
             }
         }));
+    },
+
+    refresh(frm) {
+        if (frm.doc.docstatus === 0 && frm.doc.sales_order) {
+            frm.add_custom_button(__("Add Sales Order Item"), () => {
+
+            });
+        }
+    },
+
+    sales_order(frm) {
+        if (frm.doc.sales_order) {
+            frm.add_custom_button(__("Add Sales Order Item"), () => {
+
+            });
+        }
     }
 });
