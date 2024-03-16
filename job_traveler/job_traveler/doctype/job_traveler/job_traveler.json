@@ -72,25 +72,29 @@
    "default": "0",
    "fieldname": "c_of_c",
    "fieldtype": "Check",
-   "label": "C of C"
+   "label": "C of C",
+   "read_only_depends_on": "eval:!Boolean(doc.sales_order)"
   },
   {
    "default": "0",
    "fieldname": "c_of_m",
    "fieldtype": "Check",
-   "label": "C of M"
+   "label": "C of M",
+   "read_only_depends_on": "eval:!Boolean(doc.sales_order)"
   },
   {
    "default": "0",
    "fieldname": "c_of_o",
    "fieldtype": "Check",
-   "label": "C of O"
+   "label": "C of O",
+   "read_only_depends_on": "eval:!Boolean(doc.sales_order)"
   },
   {
    "default": "0",
    "fieldname": "inspection_report",
    "fieldtype": "Check",
-   "label": "Inspection Report"
+   "label": "Inspection Report",
+   "read_only_depends_on": "eval:!Boolean(doc.sales_order)"
   },
   {
    "fieldname": "tasks_section",
@@ -107,7 +111,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-16 15:05:22.326238",
+ "modified": "2024-03-16 15:19:07.037533",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler",
