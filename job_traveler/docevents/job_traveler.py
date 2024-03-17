@@ -10,6 +10,8 @@ def create_job_travelers(doc, *args):
             "item": item.item_code,
             "project": doc.project,
             "customer_purchase_order": doc.po_no,
+            "customer_delivery_date": item.delivery_date,
+            "description": item.description
         })
         traveler.save(ignore_permissions=True)
     frappe.msgprint("Draft Job Travelers have also been created")
