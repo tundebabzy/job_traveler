@@ -21,6 +21,15 @@ frappe.ui.form.on("Job Traveler", {
                 }
             }))
         }
+
+        if (frm.doc.sales_order) {
+            frm.set_query("sales_order_item", () => ({
+                query: "job_traveler.queries.job_traveler.get_items_in_price_list",
+                filters: {
+                    sales_order: frm.doc.sales_order
+                }
+            }))
+        }
     },
 
     project(frm) {
@@ -28,6 +37,17 @@ frappe.ui.form.on("Job Traveler", {
             frm.set_query("task", "tasks", () => ({
                 filters: {
                     project: frm.doc.project
+                }
+            }))
+        }
+    },
+
+    sales_order(frm) {
+        if (frm.doc.sales_order) {
+            frm.set_query("sales_order_item", () => ({
+                query: "job_traveler.queries.job_traveler.get_items_in_price_list",
+                filters: {
+                    so: frm.doc.sales_order
                 }
             }))
         }
