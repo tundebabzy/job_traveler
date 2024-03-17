@@ -226,3 +226,6 @@ doc_events = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+	{"doctype": "Print Format", "filters": {"name": "Job Traveler"}}
+]
