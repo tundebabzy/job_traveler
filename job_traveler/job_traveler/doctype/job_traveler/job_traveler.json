@@ -55,6 +55,7 @@
    "fetch_from": "sales_order.project",
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Project",
    "options": "Project",
    "read_only": 1
@@ -63,6 +64,7 @@
    "fetch_from": "sales_order.po_no",
    "fieldname": "customer_purchase_order",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Customer Purchase Order",
    "read_only": 1
   },
@@ -112,6 +114,7 @@
   {
    "fieldname": "item",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Item",
    "options": "Item",
    "read_only": 1
@@ -120,7 +123,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-16 21:15:30.576179",
+ "modified": "2024-03-16 21:17:00.089240",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler",
