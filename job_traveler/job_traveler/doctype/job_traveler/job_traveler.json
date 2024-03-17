@@ -49,8 +49,7 @@
    "fieldname": "sales_order_item",
    "fieldtype": "Link",
    "label": "Sales Order Item",
-   "options": "Sales Order Item",
-   "unique": 1
+   "options": "Sales Order Item"
   },
   {
    "fetch_from": "sales_order.project",
@@ -124,7 +123,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-16 21:20:37.333923",
+ "modified": "2024-03-16 21:57:43.680971",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler",
