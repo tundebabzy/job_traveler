@@ -51,5 +51,28 @@ frappe.ui.form.on("Job Traveler", {
                 }
             }))
         }
+    },
+
+    sales_order_item(frm) {
+        if (frm.doc.sales_order_item) {
+            frappe.call({
+                method: "frappe.client.get_value",
+                args: {
+                    doctype: "Sales Order Item",
+                    parent: "Sales Order",
+                    fieldname: "item_code",
+                    filters: {
+                        name: frm.doc.sales_order_item
+                    }
+                },
+                callback(r) {
+                    if (r && r.message) {
+                        frm.set_value("item", r.message.item_code);
+                    }
+                }
+            })
+        } else {
+            frm.set_value("item", "");
+        }
     }
 });
