@@ -56,18 +56,20 @@ frappe.ui.form.on("Job Traveler", {
     sales_order_item(frm) {
         if (frm.doc.sales_order_item) {
             frappe.call({
-                method: "frappe.client.get_value",
+                method: "frappe.client.get_list",
                 args: {
                     doctype: "Sales Order Item",
                     parent: "Sales Order",
-                    fieldname: "item_code",
+                    fields: ["item_code", "delivery_date"],
                     filters: {
                         name: frm.doc.sales_order_item
-                    }
+                    },
+                    limit_page_length: 1
                 },
                 callback(r) {
                     if (r && r.message) {
-                        frm.set_value("item", r.message.item_code);
+                        frm.set_value("item", r.message[0].item_code);
+                        frm.set_value("customer_delivery_date", r.message[0].delivery_date);
                     }
                 }
             })

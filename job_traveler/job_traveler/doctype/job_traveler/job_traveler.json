@@ -13,6 +13,8 @@
   "item",
   "project",
   "customer_purchase_order",
+  "description",
+  "customer_delivery_date",
   "column_break_s3l7",
   "c_of_c",
   "c_of_m",
@@ -118,12 +120,23 @@
    "label": "Item",
    "options": "Item",
    "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "customer_delivery_date",
+   "fieldtype": "Date",
+   "label": "Customer Delivery Date",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-16 21:57:43.680971",
+ "modified": "2024-03-16 22:51:59.053111",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler",
