@@ -45,6 +45,7 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:Boolean(doc.sales_order)",
    "fieldname": "sales_order_item",
    "fieldtype": "Link",
    "label": "Sales Order Item",
@@ -119,7 +120,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-16 21:13:46.827572",
+ "modified": "2024-03-16 21:15:30.576179",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler",
