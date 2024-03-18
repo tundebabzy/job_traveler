@@ -78,3 +78,13 @@ frappe.ui.form.on("Job Traveler", {
         }
     }
 });
+
+frappe.ui.form.on("Job Traveler Item", "onload", function(frm){
+    frm.set_query("task", function(){
+        return {
+            "filters": [
+                ["Task", "project", "=", frm.doc.project],
+            ]
+        }
+    });
+});
