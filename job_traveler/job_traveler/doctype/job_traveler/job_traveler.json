@@ -136,13 +136,13 @@
   {
    "fieldname": "customer_part_number",
    "fieldtype": "Data",
-   "label": "Customer part number"
+   "label": "Customer Part Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-18 08:32:43.514050",
+ "modified": "2024-03-18 10:11:44.876217",
  "modified_by": "Administrator",
  "module": "Job Traveler",
  "name": "Job Traveler",

@@ -7,13 +7,14 @@ def cutomer_part_number(item, current_cutomer):
         for cutomer in cutomers.customer_items:
             if cutomer['customer_name'] == current_cutomer:
                 return cutomer['ref_code']
+            if cutomer['ref_code'] and not cutomer['customer_name']:
+                return cutomer['ref_code']
     
     return ""
 
 
 def create_job_travelers(doc, *args):
     for item in doc.items:
-        print(item)
         traveler = frappe.new_doc("Job Traveler")
         traveler.update({
             "sales_order": doc.name,
