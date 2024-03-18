@@ -1,8 +1,19 @@
 import frappe
+from erpnext.stock.doctype.item.item import get_item_details
+
+def cutomer_part_number(item, current_cutomer):
+    cutomers = get_item_details(item)
+    if cutomers.customer_items:
+        for cutomer in cutomers.customer_items:
+            if cutomer['customer_name'] == current_cutomer:
+                return cutomer['ref_code']
+    
+    return ""
 
 
 def create_job_travelers(doc, *args):
     for item in doc.items:
+        print(item)
         traveler = frappe.new_doc("Job Traveler")
         traveler.update({
             "sales_order": doc.name,
@@ -11,7 +22,8 @@ def create_job_travelers(doc, *args):
             "project": doc.project,
             "customer_purchase_order": doc.po_no,
             "customer_delivery_date": item.delivery_date,
-            "description": item.description
+            "description": item.description,
+            "customer_part_number": cutomer_part_number(item.item_code, doc.customer_name)
         })
         traveler.save(ignore_permissions=True)
     frappe.msgprint("Draft Job Travelers have also been created")
