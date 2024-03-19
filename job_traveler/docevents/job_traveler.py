@@ -1,7 +1,7 @@
 import frappe
 from erpnext.stock.doctype.item.item import get_item_details
 
-@frappe.whitelist()
+
 def cutomer_part_number(item, current_cutomer):
     item_details = get_item_details(item)
     if item_details.customer_items:
