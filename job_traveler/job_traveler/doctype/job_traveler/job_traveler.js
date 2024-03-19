@@ -47,7 +47,7 @@ frappe.ui.form.on("Job Traveler", {
             frm.set_query("sales_order_item", () => ({
                 query: "job_traveler.queries.job_traveler.get_items_in_price_list",
                 filters: {
-                    so: frm.doc.sales_order
+                    sales_order: frm.doc.sales_order
                 }
             }))
         }
