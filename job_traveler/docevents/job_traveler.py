@@ -1,14 +1,15 @@
 import frappe
 from erpnext.stock.doctype.item.item import get_item_details
 
+@frappe.whitelist()
 def cutomer_part_number(item, current_cutomer):
-    customers = get_item_details(item)
-    if customers.customer_items:
-        for customer in customers.customer_items:
-            if customer['customer_name'] == current_cutomer:
-                return customer['ref_code']
-            if customer['ref_code'] and not customer['customer_name']:
-                return customer['ref_code']
+    item_details = get_item_details(item)
+    if item_details.customer_items:
+        for customer_part_no in item_details.customer_items:
+            if customer_part_no['customer_name'] == current_cutomer:
+                return customer_part_no['ref_code']
+            if customer_part_no['ref_code'] and not customer_part_no['customer_name']:
+                return customer_part_no['ref_code']
     
     return ""
 
