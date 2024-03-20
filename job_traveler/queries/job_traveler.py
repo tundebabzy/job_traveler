@@ -1,5 +1,7 @@
 import frappe
 from frappe.desk.reportview import get_match_cond
+from erpnext.stock.doctype.item.item import get_item_details
+
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
@@ -16,3 +18,17 @@ def get_items_in_price_list(doctype, txt, searchfield, start, page_len, filters)
         )
     else:
         return []
+    
+
+@frappe.whitelist()
+def get_customer_part_name(item, sales_order):
+    current_customer =  frappe.get_value("Sales Order", sales_order, "customer_name")
+    item_details = get_item_details(item)
+    if item_details.customer_items:
+        for customer_part_no in item_details.customer_items:
+            if customer_part_no['customer_name'] == current_customer:
+                return customer_part_no['ref_code']
+            if customer_part_no['ref_code'] and not customer_part_no['customer_name']:
+                return customer_part_no['ref_code']
+    
+    return ""

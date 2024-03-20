@@ -47,7 +47,7 @@ frappe.ui.form.on("Job Traveler", {
             frm.set_query("sales_order_item", () => ({
                 query: "job_traveler.queries.job_traveler.get_items_in_price_list",
                 filters: {
-                    so: frm.doc.sales_order
+                    sales_order: frm.doc.sales_order
                 }
             }))
         }
@@ -75,6 +75,25 @@ frappe.ui.form.on("Job Traveler", {
             })
         } else {
             frm.set_value("item", "");
+        }
+    } ,
+
+    item(frm) {
+        if (frm.doc.item) {
+            frappe.call({
+                method: "job_traveler.queries.job_traveler.get_customer_part_name",
+                args: {
+                    item: frm.doc.item,
+                    sales_order: frm.doc.sales_order,
+                },
+                callback(r) {
+                    if (r && r.message) {
+                        frm.set_value("customer_part_number", r.message);
+                    }
+                }
+            })
+        } else {
+            frm.set_value("customer_part_number", "");
         }
     }
 });
