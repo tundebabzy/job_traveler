@@ -81,7 +81,7 @@ frappe.ui.form.on("Job Traveler", {
     item(frm) {
         if (frm.doc.item) {
             frappe.call({
-                method: "job_traveler.queries.job_traveler.cutomer_part_number",
+                method: "job_traveler.queries.job_traveler.get_customer_part_name",
                 args: {
                     item: frm.doc.item,
                     sales_order: frm.doc.sales_order,
